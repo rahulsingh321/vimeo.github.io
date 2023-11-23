@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Vimeo SDK DEMO</title>
+</head>
+<body>
+
+  <iframe src="https://player.vimeo.com/video/886156458?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <script>
+    var iframe = document.querySelector('iframe');
+    var player = new Vimeo.Player(iframe);
+
+    player.on('play', function() {
+      console.log('Played the video');
+    });
+
+    player.getVideoTitle().then(function(title) {
+      console.log('title:', title);
+    });
+  </script>
+
+</body>
+</html>
